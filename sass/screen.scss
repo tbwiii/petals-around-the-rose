@@ -1,0 +1,82 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+$dark: #999;
+$darkest: #333;
+
+@import "compass/reset";
+
+body {
+	background: #ddd;
+	color: #darkest;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+}
+
+#wrap {
+	width: 800px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 20px 0 0 0;
+}
+
+#results {
+	margin: 0 auto 20px;
+	height: 123px;
+	width: 720px;
+}
+
+a.roll {
+	display: block;
+	width: 40%;
+	margin:0 auto;
+	color: #fff;
+	background: $dark;
+	padding:10px 0;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 8px;
+}
+
+.dice {
+	display: block;
+	float: left;
+	background: url('../images/dice.jpg');
+
+}
+
+.one {width:107px;height:112px;margin: 0 7px 0 6px;background-position:-0px -122px;background-repeat:no-repeat;}
+.two {width:87px;height:109px;margin: 0 17px 0 16px;background-position:-357px -121px;background-repeat:no-repeat;}
+.three {width:91px;height:101px;margin: 0 14px 0 15px;background-position:-107px -33px;background-repeat:no-repeat;}
+.five {width:96px;height:123px;margin: 0 12px;background-position:-179px -134px;background-repeat:no-repeat;}
+.four {width:94px;height:101px;margin: 0 13px;background-position:-245px -33px;background-repeat:no-repeat;}
+.six {width:90px;height:93px;margin: 0 14px;background-position:-377px -9px;background-repeat:no-repeat;}
+
+
+.guess {
+	width: 550px;
+	height: 30px;
+	margin: 40px auto;
+
+	a {
+		display: block;
+		float: left;
+		width: 30px;
+		padding: 7px 0;
+		margin: 0 10px;
+		text-align: center;
+		text-decoration: none;
+		color: #fff;
+		background: $dark;
+		border-radius: 30px;
+	}
+
+}
+
+footer {
+	clear: both;
+	text-align: center;
+	font-size: .8em;
+}
