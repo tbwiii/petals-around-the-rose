@@ -20,6 +20,10 @@ petals.to_word = function (num) {
 	}
 }
 
+petals.signif1 = (678.2 / 458) + (92.45 % 50.400786) - (45 * .234) - 30.00000003;
+
+petals.signif2 = (678.2 / 458) + (92.45 % 50.400786) - (45 * .234) - 28.00000003;
+
 petals.roll_the_die = function () {
  
     petals.answer = 0;
@@ -30,11 +34,9 @@ petals.roll_the_die = function () {
 
     	$(this).attr("class", "dice " + petals.to_word(i));
 
-        if (i === 3) {
-            petals.answer += 2;
-        } else if (i === 5) {
-            petals.answer += 4
-        }
+        if (i === Math.round(petals.signif1) || i === Math.round(petals.signif2)) {
+            petals.answer += (i -1);
+        } 
 
     });
 
@@ -47,10 +49,26 @@ petals.toggle_overlay = function () {
 	$('#overlay').fadeToggle();
 }
 
-petals.toggle_rules = function () {
-	$('#rules').toggleClass('hide');
+petals.toggle = function (id) {
+	if (typeof (id) === "object") {
+		id = $(id.target).data('params');
+	}
+
+	$('#'+id).toggleClass('hide');
 	this.toggle_overlay();
 }
+
+petals.guess = function (e) {
+	var guess = parseInt($(e.target).html(), '10');
+
+		if (guess === petals.answer) {
+			this.toggle('right');
+		} else {
+			this.toggle('wrong');
+		}
+}
+
+
 
 //===================== Page-loaded code ================//
 $(function() {
@@ -60,19 +78,19 @@ $(function() {
 
 	for( var i = 0 ; i < petals.actions.length ; i += 1) {
 		petals.actions[i].onclick = (function (e) {
-			petals[$(e.target).data('action')]();
+			petals[$(e.target).data('action')](e);
 		});
 	}
 
-	$('.guess').on("click", "a", function (e) {
-		var guess = parseInt($(this).html(), '10');
+	// $('.guess').on("click", "a", function (e) {
+	// 	var guess = parseInt($(this).html(), '10');
 
-		if (guess === petals.answer) {
-			console.log('correct')
-		} else {
-			console.log('NOPE')
-		}
-	})
+	// 	if (guess === petals.answer) {
+	// 		console.log('correct')
+	// 	} else {
+	// 		console.log('NOPE')
+	// 	}
+	// })
 });
 
 

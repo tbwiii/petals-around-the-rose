@@ -30,21 +30,21 @@
 		<a class="roll" href="#" data-action="roll_the_die">Ask the Potentate to Roll</a>
 
 		<div class="guess">
-			<a href="#">0</a>
-			<a href="#">2</a>
-			<a href="#">4</a>
-			<a href="#">6</a>
-			<a href="#">8</a>
-			<a href="#">10</a>
-			<a href="#">12</a>
-			<a href="#">14</a>
-			<a href="#">16</a>
-			<a href="#">18</a>
-			<a href="#">20</a>
+			<a href="#" data-action="guess">0</a>
+			<a href="#" data-action="guess">2</a>
+			<a href="#" data-action="guess">4</a>
+			<a href="#" data-action="guess">6</a>
+			<a href="#" data-action="guess">8</a>
+			<a href="#" data-action="guess">10</a>
+			<a href="#" data-action="guess">12</a>
+			<a href="#" data-action="guess">14</a>
+			<a href="#" data-action="guess">16</a>
+			<a href="#" data-action="guess">18</a>
+			<a href="#" data-action="guess">20</a>
 		</div>
 
 		<p>
-			<a href="#" data-action="toggle_rules">Rules</a>
+			<a href="#" data-action="toggle" data-params="rules">Rules</a>
 		</p>
 
 		<footer>
@@ -52,7 +52,21 @@
 		</footer>
 	</div>
 	<div id="overlay" class="hide">
+		<div id="right" class="hide">
+			<h1>Correct!</h1>
+
+			<a href="#" class="close" data-action="toggle" data-params="right">Close</a>
+		</div>
+
+		<div id="wrong" class="hide">
+			<h1>Incorrect</h1>
+
+			<a href="#" class="close" data-action="toggle" data-params="wrong">Close</a>
+		</div>
+
 		<div id="rules" class="hide">
+			<h1>The Rules</h1>
+
 			<p>
 				The name of the game is "Petals Around the Rose" and the name is key.
 			</p>
@@ -69,7 +83,7 @@
 				That person is a Potentate of the Rose.
 			</p>
 
-			<a href="#" data-action="toggle_rules">Close</a>
+			<a href="#" class="close" data-action="toggle" data-params="rules">Close</a>
 		</div>
 	</div>
 </body>

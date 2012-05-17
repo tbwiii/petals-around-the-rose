@@ -76,6 +76,12 @@ body {
 }
 
 /* line 19, ../sass/screen.scss */
+h1 {
+  font-size: 1.6em;
+  margin: 0 0 20px 0;
+}
+
+/* line 24, ../sass/screen.scss */
 #wrap {
   width: 800px;
   margin: 20px auto;
@@ -83,14 +89,14 @@ body {
   padding: 20px 0;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 #results {
   margin: 0 auto 20px;
   height: 123px;
   width: 720px;
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 39, ../sass/screen.scss */
 a.roll {
   display: block;
   width: 40%;
@@ -103,14 +109,14 @@ a.roll {
   border-radius: 8px;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .dice {
   display: block;
   float: left;
   background: url("../images/dice.jpg");
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 .one {
   width: 107px;
   height: 112px;
@@ -119,7 +125,7 @@ a.roll {
   background-repeat: no-repeat;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 .two {
   width: 87px;
   height: 109px;
@@ -128,7 +134,7 @@ a.roll {
   background-repeat: no-repeat;
 }
 
-/* line 55, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 .three {
   width: 91px;
   height: 101px;
@@ -137,7 +143,7 @@ a.roll {
   background-repeat: no-repeat;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 .five {
   width: 96px;
   height: 123px;
@@ -146,7 +152,7 @@ a.roll {
   background-repeat: no-repeat;
 }
 
-/* line 57, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .four {
   width: 94px;
   height: 101px;
@@ -155,7 +161,7 @@ a.roll {
   background-repeat: no-repeat;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 .six {
   width: 90px;
   height: 93px;
@@ -164,13 +170,13 @@ a.roll {
   background-repeat: no-repeat;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .guess {
   width: 550px;
   height: 30px;
   margin: 40px auto;
 }
-/* line 66, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 .guess a {
   display: block;
   float: left;
@@ -184,35 +190,50 @@ a.roll {
   border-radius: 30px;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 #overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(100, 0, 0, 0.85);
 }
-
-/* line 90, ../sass/screen.scss */
-#rules {
+/* line 94, ../sass/screen.scss */
+#overlay div {
   color: #fefefe;
   width: 700px;
   margin: 100px auto 0;
   padding: 40px;
   border-radius: 6px;
+  text-align: center;
 }
-/* line 97, ../sass/screen.scss */
-#rules p {
+/* line 102, ../sass/screen.scss */
+#overlay div h1 {
+  text-align: center;
+}
+/* line 107, ../sass/screen.scss */
+#overlay div p {
   margin: 0 0 20px 0;
 }
+/* line 112, ../sass/screen.scss */
+#overlay div a.close {
+  color: #fff;
+  display: block;
+  width: 80px;
+  padding: 10px 0;
+  margin: 0 auto;
+  text-decoration: none;
+  background: #333;
+  border-radius: 10px;
+}
 
-/* line 104, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 .hide {
   display: none;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 footer {
   clear: both;
   text-align: center;
