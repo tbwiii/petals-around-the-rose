@@ -26,7 +26,7 @@ petals.roll_the_die = function () {
 
     $('.dice').each(function() {
 
-    	i = Math.floor((Math.random()*6)+1);
+    	var i = Math.floor((Math.random()*6)+1);
 
     	$(this).attr("class", "dice " + petals.to_word(i));
 
@@ -42,8 +42,29 @@ petals.roll_the_die = function () {
     
 }
 
+
+petals.toggle_overlay = function () {
+	$('#overlay').fadeToggle();
+}
+
+petals.toggle_rules = function () {
+	$('#rules').toggleClass('hide');
+	this.toggle_overlay();
+}
+
+//===================== Page-loaded code ================//
 $(function() {
-	$('.guess').on("click", "a", function  (e) {
+	$('#overlay').removeClass('hide').hide();
+
+	petals.actions = document.getElementsByTagName("a");
+
+	for( var i = 0 ; i < petals.actions.length ; i += 1) {
+		petals.actions[i].onclick = (function (e) {
+			petals[$(e.target).data('action')]();
+		});
+	}
+
+	$('.guess').on("click", "a", function (e) {
 		var guess = parseInt($(this).html(), '10');
 
 		if (guess === petals.answer) {

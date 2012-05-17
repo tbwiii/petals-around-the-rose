@@ -6,20 +6,23 @@
 $dark: #999;
 $darkest: #333;
 
+
 @import "compass/reset";
 
 body {
 	background: #ddd;
 	color: #darkest;
-	font-size: 16px;
+	font-size: 18px;
 	font-family: Helvetica, sans-serif;
 }
 
 #wrap {
 	width: 800px;
-	margin: 0 auto;
+	margin: 20px auto;
 	background: #fff;
-	padding: 20px 0 0 0;
+	padding: 20px 0 ;
+
+	
 }
 
 #results {
@@ -73,6 +76,33 @@ a.roll {
 		border-radius: 30px;
 	}
 
+}
+
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:  100%;
+	background: rgba(0,0,0,.85);
+}
+
+#rules {
+	color: #fefefe;
+	width: 700px;
+	margin: 100px auto 0;
+	padding: 40px;
+	border-radius: 6px;
+	
+	p {
+		margin: 0 0 20px 0;
+
+	}
+
+}
+
+.hide {
+	display: none;
 }
 
 footer {

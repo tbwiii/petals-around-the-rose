@@ -27,7 +27,7 @@
 			</span>
 		</div>
 
-		<a class="roll" href="#" onclick="petals.roll_the_die();">Roll</a>
+		<a class="roll" href="#" data-action="roll_the_die">Ask the Potentate to Roll</a>
 
 		<div class="guess">
 			<a href="#">0</a>
@@ -43,9 +43,34 @@
 			<a href="#">20</a>
 		</div>
 
+		<p>
+			<a href="#" data-action="toggle_rules">Rules</a>
+		</p>
+
 		<footer>
 			&copy; 2012 Ted Waller
 		</footer>
+	</div>
+	<div id="overlay" class="hide">
+		<div id="rules" class="hide">
+			<p>
+				The name of the game is "Petals Around the Rose" and the name is key.
+			</p>
+
+			<p>
+				The answer of each roll is 0 or an even number that is never higher than 20.
+			</p>
+
+			<p>
+				Only a person who knows the secret of how the answer is reached may roll.
+			</p>
+
+			<p>
+				That person is a Potentate of the Rose.
+			</p>
+
+			<a href="#" data-action="toggle_rules">Close</a>
+		</div>
 	</div>
 </body>
 </html>
