@@ -30,7 +30,7 @@ petals.roll_the_die = function () {
 
     $('.dice').each(function() {
 
-    	var i = Math.floor((Math.random()*6)+1);
+    	var i = Math.floor((Math.random()*5)+1);
 
     	var y = Math.floor((Math.random()*7)+3),
     		z = Math.floor((Math.random()*7)+3),
