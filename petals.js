@@ -32,13 +32,30 @@ petals.roll_the_die = function () {
 
     	var i = Math.floor((Math.random()*6)+1);
 
-    	$(this).attr("class", "dice " + petals.to_word(i));
+    	var y = Math.floor((Math.random()*7)+3),
+    		z = Math.floor((Math.random()*7)+3),
+    		x = Math.floor((Math.random()*6)),
+    		time1 = Math.floor(Math.random() * (400 - 250 + 1)) + 250,
+    		time2 = Math.floor(Math.random() * (320 - 185 + 1)) + 250,
+    		time3 = Math.floor(Math.random() * (220 - 100 + 1)) + 250;
+
+
+
+    	$(this).attr("class", "dice " + petals.to_word(i))
+    			.animate({ 'margin-top': "-"+y+"00px", 'margin-bottom': +y+"00px"  }, time1)
+    			.animate({ 'margin-top': "+="+y+"00px", 'margin-bottom': "-="+y+"00px" },time2)
+    			.animate({ 'margin-top': "-="+z+"0px", 'margin-bottom': "+="+z+"0px" }, time2)
+    			.animate({ 'margin-top': "+="+x+"0px", 'margin-bottom': "-="+z+"0px" },time3);
+
 
         if (i === Math.round(petals.signif1) || i === Math.round(petals.signif2)) {
             petals.answer += (i -1);
         } 
 
     });
+
+    $('a.roll').toggleClass('hide');
+    $('div.guess').toggleClass('hide');
 
     return false;
     
@@ -63,6 +80,8 @@ petals.guess = function (e) {
 
 		if (guess === petals.answer) {
 			this.toggle('right');
+			$('a.roll').toggleClass('hide');
+   			$('div.guess').toggleClass('hide');
 		} else {
 			this.toggle('wrong');
 		}

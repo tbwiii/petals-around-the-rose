@@ -2,10 +2,14 @@
 <head>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="petals.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Sail' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="stylesheets/screen.css">
+
 	<title>Petals Around the Rose</title>
 </head>
 <body>
+
+	<h1>Petals Around the Rose</h1>
 	<div id="wrap">
 		<div id="results">
 			<span class="dice">
@@ -29,7 +33,7 @@
 
 		<a class="roll" href="#" data-action="roll_the_die">Ask the Potentate to Roll</a>
 
-		<div class="guess">
+		<div class="guess hide">
 			<a href="#" data-action="guess">0</a>
 			<a href="#" data-action="guess">2</a>
 			<a href="#" data-action="guess">4</a>
@@ -44,13 +48,12 @@
 		</div>
 
 		<p>
-			<a href="#" data-action="toggle" data-params="rules">Rules</a>
+			
 		</p>
-
-		<footer>
-			&copy; 2012 Ted Waller
-		</footer>
 	</div>
+	<footer>
+			&copy; 2012 Ted Waller | <a href="#" data-action="toggle" data-params="rules">How to Play</a>
+	</footer>
 	<div id="overlay" class="hide">
 		<div id="right" class="hide">
 			<h1>Correct!</h1>

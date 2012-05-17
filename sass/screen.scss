@@ -3,30 +3,39 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-$dark: #999;
+$dark: #333;
 $darkest: #333;
+$green: #6EB475;
 
 
 @import "compass/reset";
 
 body {
-	background: #ddd;
+	background: $green url('../images/table.jpg') top repeat-x;
 	color: #darkest;
 	font-size: 18px;
 	font-family: Helvetica, sans-serif;
+
+	>h1 {
+		color: #fff;
+		margin: 40px 0 0 0;
+		font-size: 4em;
+		text-shadow: 2px 2px 7px  #333;
+	}
+
 }
 
 h1 {
 	font-size: 1.6em;
 	margin:0 0 20px 0;
+	font-family: 'Sail', cursive;
+	text-align: center;
 }
 
 #wrap {
 	width: 800px;
-	margin: 20px auto;
-	background: #fff;
-	padding: 20px 0 ;
-
+	height: 200px;
+	margin: 120px auto 0;
 	
 }
 
@@ -34,6 +43,7 @@ h1 {
 	margin: 0 auto 20px;
 	height: 123px;
 	width: 720px;
+	overflow: visible
 }
 
 a.roll {
@@ -51,28 +61,28 @@ a.roll {
 .dice {
 	display: block;
 	float: left;
-	background: url('../images/dice.jpg');
+	background: url('../images/dice.png');
 
 }
 
 .one {width:107px;height:112px;margin: 0 7px 0 6px;background-position:-0px -122px;background-repeat:no-repeat;}
-.two {width:87px;height:109px;margin: 0 17px 0 16px;background-position:-357px -121px;background-repeat:no-repeat;}
+.two {width:87px;height:109px;margin:  0 16px;background-position:-357px -121px;background-repeat:no-repeat;}
 .three {width:91px;height:101px;margin: 0 14px 0 15px;background-position:-107px -33px;background-repeat:no-repeat;}
-.five {width:96px;height:123px;margin: 0 12px;background-position:-179px -134px;background-repeat:no-repeat;}
-.four {width:94px;height:101px;margin: 0 13px;background-position:-245px -33px;background-repeat:no-repeat;}
+.five {width:96px;height:123px;margin: 0 12px 0;background-position:-179px -134px;background-repeat:no-repeat;}
+.four {width:94px;height:101px;margin: 0 13px 0;background-position:-245px -33px;background-repeat:no-repeat;}
 .six {width:90px;height:93px;margin: 0 14px;background-position:-377px -9px;background-repeat:no-repeat;}
 
 
 .guess {
-	width: 550px;
-	height: 30px;
-	margin: 40px auto;
+	width: 660px;
+	height: 40px;
+	margin: 0 auto;
 
 	a {
 		display: block;
 		float: left;
-		width: 30px;
-		padding: 7px 0;
+		width: 40px;
+		padding: 11px 0;
 		margin: 0 10px;
 		text-align: center;
 		text-decoration: none;
@@ -89,12 +99,12 @@ a.roll {
 	left: 0;
 	width: 100%;
 	height:  100%;
-	background: rgba(100,0,0,.85);
+	background: rgba(0,0,0,.85);
 
 	div {
 		color: #fefefe;
 		width: 700px;
-		margin: 100px auto 0;
+		margin: 174px auto 0;
 		padding: 40px;
 		border-radius: 6px;
 		text-align: center;
@@ -122,7 +132,7 @@ a.roll {
 	}
 }
 
-.hide {
+.hide, a.hide {
 	display: none;
 }
 
@@ -130,4 +140,9 @@ footer {
 	clear: both;
 	text-align: center;
 	font-size: .8em;
+	margin: 20px 0;
+	
+	a {
+		color: #333;
+	}
 }
