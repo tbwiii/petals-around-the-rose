@@ -70,7 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 13, ../sass/screen.scss */
 body {
   background: #6eb475 url("../images/table.jpg") top repeat-x;
-  color: #darkest;
+  color: #333333;
   font-size: 18px;
   font-family: Helvetica, sans-serif;
 }

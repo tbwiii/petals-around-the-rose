@@ -18,11 +18,7 @@ petals.to_word = function (num) {
 	} else if (num === 6) {
 		return "six";
 	}
-}
-
-petals.signif1 = (678.2 / 458) + (92.45 % 50.400786) - (45 * .234) - 30.00000003;
-
-petals.signif2 = (678.2 / 458) + (92.45 % 50.400786) - (45 * .234) - 28.00000003;
+};
 
 petals.roll_the_die = function () {
  
@@ -48,7 +44,7 @@ petals.roll_the_die = function () {
     			.animate({ 'margin-top': "+="+x+"0px", 'margin-bottom': "-="+z+"0px" },time3);
 
 
-        if (i === Math.round(petals.signif1) || i === Math.round(petals.signif2)) {
+        if (i === 3 || i === 5) {
             petals.answer += (i -1);
         } 
 
@@ -59,12 +55,12 @@ petals.roll_the_die = function () {
 
     return false;
     
-}
+};
 
 
 petals.toggle_overlay = function () {
 	$('#overlay').fadeToggle();
-}
+};
 
 petals.toggle = function (id) {
 	if (typeof (id) === "object") {
@@ -73,7 +69,7 @@ petals.toggle = function (id) {
 
 	$('#'+id).toggleClass('hide');
 	this.toggle_overlay();
-}
+};
 
 petals.guess = function (e) {
 	var guess = parseInt($(e.target).html(), '10');
@@ -85,7 +81,7 @@ petals.guess = function (e) {
 		} else {
 			this.toggle('wrong');
 		}
-}
+};
 
 
 
@@ -101,15 +97,6 @@ $(function() {
 		});
 	}
 
-	// $('.guess').on("click", "a", function (e) {
-	// 	var guess = parseInt($(this).html(), '10');
-
-	// 	if (guess === petals.answer) {
-	// 		console.log('correct')
-	// 	} else {
-	// 		console.log('NOPE')
-	// 	}
-	// })
 });
 
 
