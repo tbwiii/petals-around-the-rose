@@ -23,6 +23,6 @@ This simple JavaScript app is a Potentate of the Rose. It knows the rules so you
 ##Where can I try it?
 You can play the game [here](http://tbwiii.com/petals/)*.
 
-***Just be aware that it can be immensly frustrating**.
+__*Just be aware that it can be immensly frustrating__.
 
 
