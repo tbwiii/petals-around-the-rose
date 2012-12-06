@@ -4,7 +4,7 @@
 
 Petals Around the Rose is a dice game that falls under the category of "Games with secret rules". You play it with five dice and any number of friends. At least one of the people needs to know the secret rules (This person is called a "Potentate of the Rose"). For more [check out the Wikipedia page](http://en.wikipedia.org/wiki/Petals_Around_the_Rose). (It doesn't spoil the rules.)
 
-###Discloed Rules
+###Disclosed Rules
 
 * The name of the game is "Petals Around the Rose", and the name of the game is the key to the secret rule.
 
