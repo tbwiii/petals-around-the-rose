@@ -36,7 +36,7 @@ h1 {
 	width: 800px;
 	height: 200px;
 	margin: 120px auto 0;
-	
+
 }
 
 #results {
@@ -46,7 +46,7 @@ h1 {
 	overflow: visible
 }
 
-a.roll {
+a.roll, .button {
 	display: block;
 	width: 40%;
 	margin:0 auto;
@@ -56,6 +56,7 @@ a.roll {
 	text-decoration: none;
 	text-align: center;
 	border-radius: 8px;
+	border: solid 2px #ddd;
 }
 
 .dice {
@@ -83,12 +84,13 @@ a.roll {
 		float: left;
 		width: 40px;
 		padding: 11px 0;
-		margin: 0 10px;
+		margin: 0 6px;
 		text-align: center;
 		text-decoration: none;
 		color: #fff;
 		background: $dark;
 		border-radius: 30px;
+		border: solid 2px #ddd;
 	}
 
 }
@@ -111,9 +113,10 @@ a.roll {
 
 		h1 {
 			text-align: center;
+			margin-bottom: 20px;
 
 		}
-		
+
 		p {
 			margin: 0 0 20px 0;
 
@@ -141,7 +144,7 @@ footer {
 	text-align: center;
 	font-size: .8em;
 	margin: 20px 0;
-	
+
 	a {
 		color: #333;
 	}

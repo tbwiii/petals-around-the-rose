@@ -1,9 +1,9 @@
 <html>
 <head>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="scripts/scripts.js"></script>
-	<link href='http://fonts.googleapis.com/css?family=Sail' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="stylesheets/screen.css">
+	<script type="text/javascript" src="scripts/petals.js"></script>
+	<link href="http://fonts.googleapis.com/css?family=Sail" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/screen.css">
 
 	<title>Petals Around the Rose</title>
 </head>
@@ -28,40 +28,40 @@
 			</span>
 		</div>
 
-		<a class="roll" href="#" data-action="roll_the_die">Ask the Potentate to Roll</a>
+		<a class="roll button" href="#" data-action="roll_the_die">Ask the Potentate to Roll</a>
 
 		<div class="guess hide">
-			<a href="#" data-action="guess">0</a>
-			<a href="#" data-action="guess">2</a>
-			<a href="#" data-action="guess">4</a>
-			<a href="#" data-action="guess">6</a>
-			<a href="#" data-action="guess">8</a>
-			<a href="#" data-action="guess">10</a>
-			<a href="#" data-action="guess">12</a>
-			<a href="#" data-action="guess">14</a>
-			<a href="#" data-action="guess">16</a>
-			<a href="#" data-action="guess">18</a>
-			<a href="#" data-action="guess">20</a>
+			<a href="#" data-action="guess" data-params="0">0</a>
+			<a href="#" data-action="guess" data-params="2">2</a>
+			<a href="#" data-action="guess" data-params="4">4</a>
+			<a href="#" data-action="guess" data-params="6">6</a>
+			<a href="#" data-action="guess" data-params="8">8</a>
+			<a href="#" data-action="guess" data-params="10">10</a>
+			<a href="#" data-action="guess" data-params="12">12</a>
+			<a href="#" data-action="guess" data-params="14">14</a>
+			<a href="#" data-action="guess" data-params="16">16</a>
+			<a href="#" data-action="guess" data-params="18">18</a>
+			<a href="#" data-action="guess" data-params="20">20</a>
 		</div>
 
 		<p>
-			
+
 		</p>
 	</div>
 	<footer>
-			&copy; 2012 <a href="http://twitter.com/tbwIII">Ted Waller</a> | <a href="#" data-action="toggle" data-params="rules">How to Play</a>
+			<a href="http://twitter.com/tbwIII">Ted Waller</a> | <a href="#" data-action="toggle" data-params="rules">How to Play</a>
 	</footer>
 	<div id="overlay" class="hide">
 		<div id="right" class="hide">
 			<h1>Correct!</h1>
 
-			<a href="#" class="close" data-action="toggle" data-params="right">Close</a>
+			<a href="#" class="button" data-action="toggle" data-params="right">Sweet!</a>
 		</div>
 
 		<div id="wrong" class="hide">
 			<h1>Incorrect</h1>
 
-			<a href="#" class="close" data-action="toggle" data-params="wrong">Close</a>
+			<a href="#" class="button" data-action="toggle" data-params="wrong">Try Again</a>
 		</div>
 
 		<div id="rules" class="hide">
@@ -83,7 +83,7 @@
 				That person is a Potentate of the Rose.
 			</p>
 
-			<a href="#" class="close" data-action="toggle" data-params="rules">Close</a>
+			<a href="#" class="button" data-action="toggle" data-params="rules">Got it</a>
 		</div>
 	</div>
 </body>
