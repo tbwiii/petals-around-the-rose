@@ -73,8 +73,10 @@ body {
   color: #333333;
   font-size: 18px;
   font-family: Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
-/* line 19, ../sass/screen.scss */
+/* line 21, ../sass/screen.scss */
 body > h1 {
   color: #fff;
   margin: 40px 0 0 0;
@@ -82,7 +84,7 @@ body > h1 {
   text-shadow: 2px 2px 7px  #333;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 h1 {
   font-size: 1.6em;
   margin: 0 0 20px 0;
@@ -90,14 +92,14 @@ h1 {
   text-align: center;
 }
 
-/* line 35, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 #wrap {
   width: 800px;
   height: 200px;
   margin: 120px auto 0;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 #results {
   margin: 0 auto 20px;
   height: 123px;
@@ -105,8 +107,8 @@ h1 {
   overflow: visible;
 }
 
-/* line 49, ../sass/screen.scss */
-a.roll, .button {
+/* line 51, ../sass/screen.scss */
+.button {
   display: block;
   width: 40%;
   margin: 0 auto;
@@ -119,15 +121,15 @@ a.roll, .button {
   border: solid 2px #ddd;
 }
 
-/* line 62, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 .dice {
   display: block;
   float: left;
   background: url("../images/dice.png");
 }
 
-/* line 69, ../sass/screen.scss */
-.one {
+/* line 71, ../sass/screen.scss */
+.d1 {
   width: 107px;
   height: 112px;
   margin: 0 7px 0 6px;
@@ -135,8 +137,8 @@ a.roll, .button {
   background-repeat: no-repeat;
 }
 
-/* line 70, ../sass/screen.scss */
-.two {
+/* line 72, ../sass/screen.scss */
+.d2 {
   width: 87px;
   height: 109px;
   margin: 0 16px;
@@ -144,8 +146,8 @@ a.roll, .button {
   background-repeat: no-repeat;
 }
 
-/* line 71, ../sass/screen.scss */
-.three {
+/* line 73, ../sass/screen.scss */
+.d3 {
   width: 91px;
   height: 101px;
   margin: 0 14px 0 15px;
@@ -153,17 +155,8 @@ a.roll, .button {
   background-repeat: no-repeat;
 }
 
-/* line 72, ../sass/screen.scss */
-.five {
-  width: 96px;
-  height: 123px;
-  margin: 0 12px 0;
-  background-position: -179px -134px;
-  background-repeat: no-repeat;
-}
-
-/* line 73, ../sass/screen.scss */
-.four {
+/* line 74, ../sass/screen.scss */
+.d4 {
   width: 94px;
   height: 101px;
   margin: 0 13px 0;
@@ -171,8 +164,17 @@ a.roll, .button {
   background-repeat: no-repeat;
 }
 
-/* line 74, ../sass/screen.scss */
-.six {
+/* line 75, ../sass/screen.scss */
+.d5 {
+  width: 96px;
+  height: 123px;
+  margin: 0 12px 0;
+  background-position: -179px -134px;
+  background-repeat: no-repeat;
+}
+
+/* line 76, ../sass/screen.scss */
+.d6 {
   width: 90px;
   height: 93px;
   margin: 0 14px;
@@ -180,13 +182,13 @@ a.roll, .button {
   background-repeat: no-repeat;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .guess {
   width: 660px;
   height: 40px;
   margin: 0 auto;
 }
-/* line 82, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .guess a {
   display: block;
   float: left;
@@ -201,7 +203,7 @@ a.roll, .button {
   border: solid 2px #ddd;
 }
 
-/* line 98, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 #overlay {
   position: absolute;
   top: 0;
@@ -210,7 +212,7 @@ a.roll, .button {
   height: 100%;
   background: rgba(0, 0, 0, 0.85);
 }
-/* line 106, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 #overlay div {
   color: #fefefe;
   width: 700px;
@@ -219,16 +221,16 @@ a.roll, .button {
   border-radius: 6px;
   text-align: center;
 }
-/* line 114, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 #overlay div h1 {
   text-align: center;
   margin-bottom: 20px;
 }
-/* line 120, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 #overlay div p {
   margin: 0 0 20px 0;
 }
-/* line 125, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #overlay div a.close {
   color: #fff;
   display: block;
@@ -240,19 +242,37 @@ a.roll, .button {
   border-radius: 10px;
 }
 
-/* line 138, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .hide, a.hide {
   display: none;
 }
 
-/* line 142, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
+.banner {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* line 149, ../sass/screen.scss */
+.banner p {
+  width: 300px;
+  margin: 0 auto;
+  line-height: 60px;
+  font-style: italic;
+  padding: 0;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+/* line 161, ../sass/screen.scss */
 footer {
   clear: both;
   text-align: center;
   font-size: .8em;
   margin: 20px 0;
 }
-/* line 148, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 footer a {
   color: #333;
 }

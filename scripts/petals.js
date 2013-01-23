@@ -1,33 +1,71 @@
-var petals = {};
+var Petals = function () {
 
-petals.current_roll = [];
+	var app = this;
 
-petals.answer = 0;
+	var Roll = function () {
 
-petals.to_word = function (num) {
-	if (num === 1) {
-		return "one";
-	} else if (num === 2) {
-		return "two";
-	} else if (num === 3) {
-		return "three";
-	} else if (num === 4) {
-		return "four";
-	} else if (num === 5) {
-		return "five";
-	} else if (num === 6) {
-		return "six";
-	}
-};
+		var roll = {
+			results : [],
 
-petals.roll_the_die = function () {
+			answer : 0
+		};
 
-    petals.answer = 0;
+		for (var i = 0;  i < 5 ; i = i + 1) {
+			var dice = Math.floor((Math.random()*6)+1);
+			roll.results.push(dice);
 
-    $('.dice').each(function() {
 
-		var i = Math.floor((Math.random()*6)+1);
+			if ( dice === 3 || dice === 5 ) {
+				roll.answer = roll.answer + (dice - 1);
+			}
+		}
 
+		return roll;
+	};
+
+	app.successMessages = [
+		"You got it!",
+		"Lucky guess?",
+		"Good job",
+		"How many is that now?",
+		"Very nice",
+		"yep"
+	];
+
+	app.failMessages = [
+		"(╯°□°）╯︵ ┻━┻",
+		"Did you try squinting?",
+		"Try again.",
+		"Does it hurt?",
+		"C'mon, kids can get this.",
+		"$#@(*&",
+		"Nope...",
+		"Mulligan",
+		"Let's say that didn't count.",
+		":*-(",
+		"Super-complicated math"
+
+	];
+
+	app.alert = function (msg) {
+		$alert = $("#alert");
+
+		$alert.stop().hide();
+
+		if (msg) {
+			msg = app.successMessages[Math.floor(Math.random()*app.successMessages.length)];
+		} else {
+			msg = app.failMessages[Math.floor(Math.random()*app.failMessages.length)];
+		}
+
+		$alert.children("p").html(msg);
+
+
+		$alert.slideDown().delay(2000).slideUp();
+
+	};
+
+	app.animate = function (node) {
 		var y = Math.floor((Math.random()*7)+3),
 			z = Math.floor((Math.random()*7)+3),
 			x = Math.floor((Math.random()*6)),
@@ -35,62 +73,69 @@ petals.roll_the_die = function () {
 			time2 = Math.floor(Math.random() * (320 - 185 + 1)) + 250,
 			time3 = Math.floor(Math.random() * (220 - 100 + 1)) + 250;
 
-
-
-			$(this).attr("class", "dice " + petals.to_word(i))
-				.animate({ 'margin-top': "-"+y+"00px", 'margin-bottom': +y+"00px"  }, time1)
+		$(node).animate({ 'margin-top': "-"+y+"00px", 'margin-bottom': +y+"00px"  }, time1)
 				.animate({ 'margin-top': "+="+y+"00px", 'margin-bottom': "-="+y+"00px" },time2)
 				.animate({ 'margin-top': "-="+z+"0px", 'margin-bottom': "+="+z+"0px" }, time2)
 				.animate({ 'margin-top': "+="+x+"0px", 'margin-bottom': "-="+z+"0px" },time3);
+	};
 
+	app.play = function () {
+		var roll = new Roll();
 
-        if (i === 3 || i === 5) {
-            petals.answer += (i - 1);
-        }
+		$('.dice').each(function (i) {
+			$this = $(this);
 
-    });
+			$this.attr('class', 'dice d'+ roll.results[i]);
 
-    $('a.roll').toggleClass('hide');
-    $('div.guess').toggleClass('hide');
+			app.animate($this);
 
-    return false;
+		});
 
-};
+		return roll.answer;
 
-petals.toggle_overlay = function () {
-	$('#overlay').toggleClass('hide');
-};
+	};
 
-petals.toggle = function (id) {
+	app.toggle_buttons = function (answer) {
+		$("#roll").toggleClass('hide');
 
-	if (typeof (id) === "object") {
-		id = $(id.target).data('params');
-	}
-
-	$('#'+id).toggleClass('hide');
-	this.toggle_overlay();
-};
-
-petals.guess = function (guess) {
-		if (guess === petals.answer) {
-			this.toggle('right');
-			$('a.roll').toggleClass('hide');
-			$('div.guess').toggleClass('hide');
+		if (answer) {
+			$(".guess").toggleClass('hide').children().each(function () {
+				if ($(this).html() === answer.toString()) {
+					$(this).on('click', function () {
+						app.toggle_buttons();
+						app.alert(true);
+					});
+				} else {
+					$(this).on('click', function () {
+						app.alert();
+					});
+				}
+			});
 		} else {
-			this.toggle('wrong');
+			$(".guess").toggleClass('hide').children().unbind();
 		}
+	};
+
+	app.init = function() { // starts up the application
+
+		$('#roll').on('click', function (e) {
+			var answer = app.play();
+			app.toggle_buttons(answer);
+			e.preventDefault();
+
+		});
+
+		$('#show_rules, #overlay').on('click', function () {
+			$('#overlay').stop().fadeToggle();
+		})
+
+	};
 };
 
+petals = new Petals();
 
-//===================== Page-loaded code ================//
 $(function() {
-
-	$('a').on('click', function () {
-		var $this = $(this);
-		petals[$this.data('action')]($this.data('params'));
-	});
-
+	petals.init();
 });
-
 
 
