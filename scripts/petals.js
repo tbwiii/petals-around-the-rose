@@ -50,18 +50,18 @@ var Petals = function () {
 	app.alert = function (msg) {
 		$alert = $("#alert");
 
-		$alert.stop().hide();
-
 		if (msg) {
-			msg = app.successMessages[Math.floor(Math.random()*app.successMessages.length)];
-		} else {
-			msg = app.failMessages[Math.floor(Math.random()*app.failMessages.length)];
-		}
+				msg = app.successMessages[Math.floor(Math.random()*app.successMessages.length)];
+			} else {
+				msg = app.failMessages[Math.floor(Math.random()*app.failMessages.length)];
+			}
 
-		$alert.children("p").html(msg);
+		$alert.stop().slideUp(function () {
 
+			$alert.children("p").html(msg);
+		});
 
-		$alert.slideDown().delay(2000).slideUp();
+		$alert.slideToggle();
 
 	};
 
@@ -127,7 +127,11 @@ var Petals = function () {
 
 		$('#show_rules, #overlay').on('click', function () {
 			$('#overlay').stop().fadeToggle();
-		})
+		});
+
+		$("#alert").on('click', function () {
+			$(this).slideUp();
+		});
 
 	};
 };
