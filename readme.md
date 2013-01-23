@@ -21,7 +21,7 @@ Petals Around the Rose is a dice game that falls under the category of "Games wi
 This simple JavaScript app is a Potentate of the Rose. It knows the rules so you can play without having a human around who knows the rules.
 
 ##Where can I try it?
-You can play the game [here](http://tbwiii.com/petals/)*.
+You can play the game [here](http://tbwiii.github.com/petals-around-the-rose/)*.
 
 __*Just be aware that it can be immensly frustrating__.
 
