@@ -50,18 +50,20 @@ var Petals = function () {
 	app.alert = function (msg) {
 		$alert = $("#alert");
 
+		$alert.empty();
+
 		if (msg) {
-				msg = app.successMessages[Math.floor(Math.random()*app.successMessages.length)];
-			} else {
-				msg = app.failMessages[Math.floor(Math.random()*app.failMessages.length)];
-			}
+			msg = app.successMessages[Math.floor(Math.random()*app.successMessages.length)];
+		} else {
+			msg = app.failMessages[Math.floor(Math.random()*app.failMessages.length)];
+		}
+
+		var tag = $("<p>", { html : msg });
 
 		$alert.stop().slideUp(function () {
 
-			$alert.children("p").html(msg);
+			$alert.append(tag).slideDown().delay(1500).slideUp();
 		});
-
-		$alert.slideToggle();
 
 	};
 
@@ -90,20 +92,18 @@ var Petals = function () {
 			app.animate($this);
 
 		});
-
 		return roll.answer;
-
 	};
 
 	app.toggle_buttons = function (answer) {
 		$("#roll").toggleClass('hide');
 
 		if (answer) {
-			$(".guess").toggleClass('hide').children().each(function () {
+			$(".guess").toggleClass('hide').children('a').each(function () {
 				if ($(this).html() === answer.toString()) {
 					$(this).on('click', function () {
-						app.toggle_buttons();
 						app.alert(true);
+						app.toggle_buttons();
 					});
 				} else {
 					$(this).on('click', function () {
