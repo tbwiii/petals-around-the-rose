@@ -58,12 +58,10 @@ var Petals = function () {
 			msg = app.failMessages[Math.floor(Math.random()*app.failMessages.length)];
 		}
 
-		var tag = $("<p>", { html : msg });
+		var tag = $("<p>", { html : msg, "class" : "hide" });
 
-		$alert.stop().slideUp(function () {
 
-			$alert.append(tag).slideDown().delay(1500).slideUp();
-		});
+		$alert.append(tag).children('p').slideDown().delay(1500).slideUp();
 
 	};
 
@@ -141,5 +139,3 @@ petals = new Petals();
 $(function() {
 	petals.init();
 });
-
-
