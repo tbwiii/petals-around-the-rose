@@ -96,7 +96,7 @@ var Petals = function () {
 	app.toggle_buttons = function (answer) {
 		$("#roll").toggleClass('hide');
 
-		if (answer) {
+		if (answer || answer === 0) {
 			$(".guess").toggleClass('hide').children('a').each(function () {
 				if ($(this).html() === answer.toString()) {
 					$(this).on('click', function () {
