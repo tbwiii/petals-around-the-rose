@@ -25,11 +25,13 @@ var Petals = function () {
 
 	app.successMessages = [
 		"You got it!",
-		"Lucky guess?",
+		"Well, you had to get it eventually...",
 		"Good job",
-		"How many is that now?",
 		"Very nice",
-		"yep"
+		"Yep",
+		"Again, again!",
+		"Uh huh",
+		"Keep it going"
 	];
 
 	app.failMessages = [
@@ -40,10 +42,24 @@ var Petals = function () {
 		"C'mon, kids can get this.",
 		"$#@(*&",
 		"Nope...",
-		"Mulligan",
+		'"Mulligan"',
 		"Let's say that didn't count.",
 		":*-(",
-		"Super-complicated math"
+		"Super-complicated math",
+		"Boooooooo",
+		"uh....no....",
+		"Blame it on the rain",
+		"Maybe just try tic-tac-toe?",
+		"gooby plz",
+		"Back to Farmville?",
+		"Get on with it!",
+		"Let me check...nope.",
+		"Look at banner, Michael!",
+		"You're just not alpha, bro",
+		"Bro, bro, c'mon, bro, for real bro, bro",
+		"You're out of your element, Donnie.",
+		"How many fails is that now?",
+		"..."
 
 	];
 
@@ -59,7 +75,6 @@ var Petals = function () {
 		}
 
 		var tag = $("<p>", { html : msg, "class" : "hide" });
-
 
 		$alert.append(tag).children('p').slideDown().delay(1500).slideUp();
 
