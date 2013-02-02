@@ -1,8 +1,6 @@
-var Petals = function () {
+var petals = (function () {
 
-	var app = this;
-
-	var Roll = function () {
+	 function Roll () {
 
 		var roll = {
 			results : [],
@@ -23,7 +21,7 @@ var Petals = function () {
 		return roll;
 	};
 
-	app.successMessages = [
+	var successMessages = [
 		"You got it!",
 		"Well, you had to get it eventually...",
 		"Good job",
@@ -34,7 +32,7 @@ var Petals = function () {
 		"Keep it going"
 	];
 
-	app.failMessages = [
+	var failMessages = [
 		"(╯°□°）╯︵ ┻━┻",
 		"Did you try squinting?",
 		"Try again.",
@@ -63,24 +61,23 @@ var Petals = function () {
 
 	];
 
-	app.alert = function (msg) {
-		$alert = $("#alert");
+	function banner (msg) {
+		$banner = $("#banner");
 
-		$alert.empty();
+		$banner.empty();
 
 		if (msg) {
-			msg = app.successMessages[Math.floor(Math.random()*app.successMessages.length)];
+			msg = successMessages[Math.floor(Math.random()*successMessages.length)];
 		} else {
-			msg = app.failMessages[Math.floor(Math.random()*app.failMessages.length)];
+			msg = failMessages[Math.floor(Math.random()*failMessages.length)];
 		}
 
 		var tag = $("<p>", { html : msg, "class" : "hide" });
 
-		$alert.append(tag).children('p').slideDown().delay(1500).slideUp();
+		$banner.append(tag).children('p').slideDown().delay(1500).slideUp();
+	}
 
-	};
-
-	app.animate = function (node) {
+	function animate (node) {
 		var y = Math.floor((Math.random()*7)+3),
 			z = Math.floor((Math.random()*7)+3),
 			x = Math.floor((Math.random()*6)),
@@ -92,9 +89,9 @@ var Petals = function () {
 				.animate({ 'margin-top': "+="+y+"00px", 'margin-bottom': "-="+y+"00px" },time2)
 				.animate({ 'margin-top': "-="+z+"0px", 'margin-bottom': "+="+z+"0px" }, time2)
 				.animate({ 'margin-top': "+="+x+"0px", 'margin-bottom': "-="+z+"0px" },time3);
-	};
+	}
 
-	app.play = function () {
+	function play () {
 		var roll = new Roll();
 
 		$('.dice').each(function (i) {
@@ -102,25 +99,25 @@ var Petals = function () {
 
 			$this.attr('class', 'dice d'+ roll.results[i]);
 
-			app.animate($this);
+			animate($this);
 
 		});
 		return roll.answer;
-	};
+	}
 
-	app.toggle_buttons = function (answer) {
+	toggle_buttons = function (answer) {
 		$("#roll").toggleClass('hide');
 
 		if (answer || answer === 0) {
 			$(".guess").toggleClass('hide').children('a').each(function () {
 				if ($(this).html() === answer.toString()) {
 					$(this).on('click', function () {
-						app.alert(true);
-						app.toggle_buttons();
+						banner(true);
+						toggle_buttons();
 					});
 				} else {
 					$(this).on('click', function () {
-						app.alert();
+						banner();
 					});
 				}
 			});
@@ -129,11 +126,11 @@ var Petals = function () {
 		}
 	};
 
-	app.init = function() { // starts up the application
+	function init () { // starts up the application
 
 		$('#roll').on('click', function (e) {
-			var answer = app.play();
-			app.toggle_buttons(answer);
+			var answer = play();
+			toggle_buttons(answer);
 			e.preventDefault();
 
 		});
@@ -142,15 +139,18 @@ var Petals = function () {
 			$('#overlay').stop().fadeToggle();
 		});
 
-		$("#alert").on('click', function () {
+		$("#banner").on('click', function () {
 			$(this).slideUp();
 		});
 
+	}
+
+	return {
+		init: init
 	};
-};
+})();
 
-petals = new Petals();
+petals.init();
 
-$(function() {
-	petals.init();
-});
+
+
