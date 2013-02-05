@@ -109,15 +109,17 @@ var petals = (function () {
 		$("#roll").toggleClass('hide');
 
 		if (answer || answer === 0) {
-			$(".guess").toggleClass('hide').children('a').each(function () {
+			$(".guess").toggleClass('hide').children('a').each(function (e) {
 				if ($(this).html() === answer.toString()) {
 					$(this).on('click', function () {
 						banner(true);
 						toggle_buttons();
+						e.preventDefault();
 					});
 				} else {
-					$(this).on('click', function () {
+					$(this).on('click', function (e) {
 						banner();
+						e.preventDefault();
 					});
 				}
 			});
